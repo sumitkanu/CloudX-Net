@@ -111,9 +111,8 @@ for n, id_ in tqdm(enumerate(te),total=10):
              Y_test[n][io][jo]=0
 
 
-
-
-
+model = model_arch(input_rows=256, input_cols=256, num_of_channels=3, num_of_classes=1)
+model.compile(optimizer = Adam(lr = 1e-4), loss = jacc_coef, metrics = [jacc_coef,'accuracy'])
 
 
 #checkpointer = tf.keras.callbacks.ModelCheckpoint('model_for_nuclei.h5' , verbose=1, save_best_only=True)
