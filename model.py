@@ -272,7 +272,7 @@ def improve_ff_block1(input_tensor1, pure_ff):
     return x
 
 
-def model_arch(input_rows=384, input_cols=384, num_of_channels=3, num_of_classes=1):
+def model_arch(input_rows=256, input_cols=256, num_of_channels=3, num_of_classes=1):
     inputs = Input((input_rows, input_cols, num_of_channels))
     conv1 = Conv2D(16, (3, 3), activation='relu', padding='same')(inputs)
 
@@ -293,7 +293,7 @@ def model_arch(input_rows=384, input_cols=384, num_of_channels=3, num_of_classes
 
     conv6 = bridge(pool5, 1024, (3, 3))
     
-    conv6  = aspp(conv6,12)
+    conv6  = aspp(conv6,input_rows/32)
 
     convT7 = Conv2DTranspose(512, (2, 2), strides=(2, 2), padding='same')(conv6)
     prevup7 = improve_ff_block4(input_tensor1=conv4, input_tensor2=conv3, input_tensor3=conv2, input_tensor4=conv1, pure_ff=conv5)
