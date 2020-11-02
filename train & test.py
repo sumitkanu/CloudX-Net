@@ -10,12 +10,13 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm 
 import numpy as np
 from PIL import Image
+from model import *
  
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
 IMG_CHANNELS = 3
  
-TRAIN_PATH_R = '/content/drive/My Drive/Colab Notebooks/dataset/B4/train/'
+TRAIN_PATH_R = '/content/drive/My Drive/Colab Notebooks/dataset/B4/train/'  #change path 
 TRAIN_PATH_G = '/content/drive/My Drive/Colab Notebooks/dataset/B3/train/'
 TRAIN_PATH_B = '/content/drive/My Drive/Colab Notebooks/dataset/B2/train/'
  
