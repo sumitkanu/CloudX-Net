@@ -132,20 +132,6 @@ preds_train_t = (preds_train > 0.5).astype(np.float32)
 preds_val_t = (preds_val > 0.5).astype(np.float32)
 preds_test_t = (preds_test > 0.5).astype(np.float32)
 
-
-
-# Restore the weights
-#model.load_weights("/content/drive/My Drive/Colab Notebooks/dataset2/cloudnet_200_1.h5")
-
-
-# Evaluate the model
-preds_train = model.predict(X_train, verbose=1)
-preds_val = model.predict(X_train[int(X_train.shape[0]*0.95):], verbose=1)
-preds_test = model.predict(X_test, batch_size = 1, verbose=1)
-
-preds_train_t = (preds_train > 0.5).astype(np.float32)
-preds_val_t = (preds_val > 0.5).astype(np.float32)
-preds_test_t = (preds_test > 0.5).astype(np.float32)
 train_acc = model.evaluate(X_train, Y_train, verbose=1)
 test_acc = model.evaluate(X_test, Y_test, verbose=1)
 
