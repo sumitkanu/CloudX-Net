@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm 
 import numpy as np
 from PIL import Image
-from model import *
+from cxn_model import *
  
 IMG_WIDTH = 256
 IMG_HEIGHT = 256
